@@ -1,4 +1,4 @@
-# Setting up
+# Setting up
 
 The following steps would help setup the app for development locally.
 
