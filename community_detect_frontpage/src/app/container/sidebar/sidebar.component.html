@@ -1,0 +1,31 @@
+<div class="d-flex align-items-stretch">
+  <!-- Sidebar Navigation-->
+  <nav id="sidebar">
+    <!-- Sidebar Header-->
+<!--    <div class="sidebar-header d-flex align-items-center">-->
+<!--      <div class="avatar"><img src="assets/img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>-->
+<!--      <div class="title">-->
+<!--        <h1 class="h5">Mark Stephen</h1>-->
+<!--        <p>Web Designer</p>-->
+<!--      </div>-->
+<!--    </div>-->
+    <!-- Sidebar Navigation Menus-->
+    <span class="heading">Main</span>
+    <ul class="list-unstyled">
+<!--      <li [ngClass]="{'active':sidebarIndex === 1}">-->
+<!--        <a (click)="sidebarIndex = 1" routerLink="./dashboard"><i class="icon-home"></i>仪表板（未完成）</a></li>-->
+      <li [ngClass]="{'active':sidebarIndex === 2}">
+        <a (click)="sidebarIndex = 2" routerLink="./graph-form"><i class="icon-grid"></i>Community Detection</a></li>
+<!--      <li [ngClass]="{'active':sidebarIndex === 3}">-->
+<!--        <a (click)="sidebarIndex = 3" routerLink="./graph-form"><i class="fa fa-bar-chart"></i>统计（未完成）</a></li>-->
+    </ul>
+<!--    <span class="heading">Extras</span>-->
+<!--    <ul class="list-unstyled">-->
+<!--      <li><a href="#"><i class="icon-settings"></i>配置（未完成）</a></li>-->
+<!--    </ul>-->
+  </nav>
+  <!-- Sidebar Navigation end-->
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+<div class="page-header">
+  <div class="container-fluid">
+    <h2 class="h5 no-margin-bottom">Community Detection</h2>
+  </div>
+</div>
+<section class="no-padding-top no-padding-bottom">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="block">
+          <div class="title"><strong>Choose CSV File</strong></div>
+          <div class="block-body">
+            <form class="form-horizontal">
+              <div class="form-group row">
+                <div class="col-sm-3 control-label">Nodes CSV File</div>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <input class="form-control" [(ngModel)]="nodeFileName" [ngModelOptions]="{standalone: true}" [ngClass]="{'is-invalid': nodeFileInvalid}"
+                           onclick="document.getElementById('nodesCsvFile').click();">
+                    <div class="invalid-feedback">{{nodeFileInvalidMessage}}</div>
+                    <label class="input-group-btn">
+                      <input type="button" value="Browse" class="btn btn-light" onclick="document.getElementById('nodesCsvFile').click();">
+                    </label>
+                  </div>
+                </div>
+                <input id="nodesCsvFile" type="file" name="file" accept=".csv, .txt" style="display: none"
+                       [(ngModel)]="nodeFileInput" (change)="onNodeFileChange($event)">
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 form-control-label"></label>
+                <div class="col-sm-9">
+                  <div>
+                    <input id="nodesCsvCheck" type="checkbox" class="checkbox-template" [(ngModel)]="nodeFileHasHeader"
+                           [ngModelOptions]="{standalone: true}" (change)="onNodesCsvCheckChange($event)">
+                    <label for="nodesCsvCheck">Has header row</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Node id column</label>
+                <div class="col-sm-9 ml-auto">
+                  <select multiple="" class="form-control" [(ngModel)]="nodeFileIdColumn" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let column of nodeFileColumns; let i = index" [value]="i">{{column}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="form-group row">
+                <div class="col-sm-3 control-label">Edges CSV File</div>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <input class="form-control" [(ngModel)]="edgeFileName" [ngModelOptions]="{standalone: true}" [ngClass]="{'is-invalid': edgeFileInvalid}"
+                           onclick="document.getElementById('edgesCsvFile').click();">
+                    <div class="invalid-feedback">{{edgeFileInvalidMessage}}</div>
+                    <label class="input-group-btn">
+                      <input type="button" value="Browse" class="btn btn-light" onclick="document.getElementById('edgesCsvFile').click();">
+                    </label>
+                  </div>
+                </div>
+                <input id="edgesCsvFile" type="file" name="file" accept=".csv, .txt" style="display: none" [(ngModel)]="edgeFileInput" (change)="onEdgeFileChange($event)">
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 form-control-label"></label>
+                <div class="col-sm-9">
+                  <div>
+                    <input id="edgesCsvCheck" type="checkbox" class="checkbox-template" [(ngModel)]="edgeFileHasHeader"
+                           [ngModelOptions]="{standalone: true}" (change)="onEdgesCsvCheckChange($event)">
+                    <label for="edgesCsvCheck">Has header row</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Source id column</label>
+                <div class="col-sm-9 ml-auto">
+                  <select multiple="" class="form-control" [(ngModel)]="edgeFileSourceColumn" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let column of edgeFileColumns; let i = index" [value]="i">{{column}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Target id column</label>
+                <div class="col-sm-9 ml-auto">
+                  <select multiple="" class="form-control" [(ngModel)]="edgeFileTargetColumn" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let column of edgeFileColumns; let i = index" [value]="i">{{column}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="form-group row">
+                <div class="col-sm-9 ml-auto">
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer__block block no-margin-bottom">
+    <div class="container-fluid text-center">
+      <p class="no-margin-bottom">Design by
+        <a href="https://bootstrapious.com/p/bootstrap-4-dark-admin" class="external">Bootstrapious</a></p>
+    </div>
+  </div>
+</footer>

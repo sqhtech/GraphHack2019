@@ -1,0 +1,25 @@
+<div class="page-header">
+  <div class="container-fluid">
+    <h2 class="h5 no-margin-bottom">Community Detection</h2>
+  </div>
+</div>
+
+<section class="no-padding-top no-padding-bottom">
+  <div class="container-fluid">
+    <app-graph-show title="girvan newman" showModularity="yes" algorithm="girvan_newman" level="2" [graphData]="graphData"></app-graph-show>
+    <app-graph-show title="modularity maximization" showModularity="no" algorithm="modularity_maximization" level="2" [graphData]="graphData"></app-graph-show>
+    <app-graph-show title="spectral partition" showModularity="no" algorithm="spectral_partition" level="3" [graphData]="graphData"></app-graph-show>
+    <app-graph-show title="louvain" showModularity="no" algorithm="louvain" level="2" [graphData]="graphData"></app-graph-show>
+    <app-graph-show title="walktrap" showModularity="no" algorithm="walktrap" level="7" [graphData]="graphData"></app-graph-show>
+    <app-graph-show title="lpa" showModularity="no" algorithm="lpa" level="2" [graphData]="graphData"></app-graph-show>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__block block no-margin-bottom">
+    <div class="container-fluid text-center">
+      <p class="no-margin-bottom">Design by
+        <a href="https://bootstrapious.com/p/bootstrap-4-dark-admin" class="external">Bootstrapious</a></p>
+    </div>
+  </div>
+</footer>

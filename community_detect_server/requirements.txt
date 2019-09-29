@@ -1,0 +1,9 @@
+networkx
+matplotlib
+numpy
+pandas
+seaborn
+python-louvain
+scikit_learn
+scipy
+flask

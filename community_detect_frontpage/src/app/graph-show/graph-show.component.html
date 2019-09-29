@@ -1,0 +1,14 @@
+<div class="row">
+  <div [ngClass]="{'col-lg-8': showModularity == 'yes', 'col-lg-12': showModularity != 'yes'}">
+    <div class="statistic-block block">
+      <div class="title"><strong>{{title}}</strong></div>
+      <div #graphDiv class="graph-chart"></div>
+    </div>
+  </div>
+  <div *ngIf="showModularity == 'yes'" class="col-lg-4">
+    <div class="statistic-block block">
+      <div class="title"><strong>modularity</strong></div>
+      <div #chartDiv class="modularity-chart"></div>
+    </div>
+  </div>
+</div>
